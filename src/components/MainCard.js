@@ -11,7 +11,7 @@ const MainCard = () => {
 
   const { data } = useGetPopularMovieQuery();
 
-  const backgroundImage = data?.results[1].poster_path;
+  const backgroundImage = data?.results[1].backdrop_path;
 
   const handleSearchField = (e) => {
     setSearchItem(e.target.value);
@@ -26,7 +26,7 @@ const MainCard = () => {
   };
 
   return (
-    <div className="relative m-8 h-[50vh] bg-zinc-900 mix-blend-lighten">
+    <div className="relative mx-8 mt-4 mb-8 h-[50vh] bg-zinc-900 mix-blend-lighten">
       <div className="h-full w-full">
         <img
           className="block h-full w-full rounded-xl object-cover opacity-25"

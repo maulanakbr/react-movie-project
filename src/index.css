@@ -33,7 +33,7 @@
 }
 
 @layer components {
-  .swiper {
+  #movieList.swiper {
     @apply h-[35vh];
   }
 
@@ -41,13 +41,18 @@
     @apply h-[70vh];
   }
 
-  /* .swiper .swiper-slide {
-    @apply border;
-  } */
+  #cast.swiper {
+    @apply h-[37vh];
+  }
 
-  .swiper .swiper-button-prev,
+  #movieList.swiper .swiper-button-prev,
   .swiper-button-next {
-    @apply h-[40px] w-[40px] rounded-full bg-zinc-400 text-sm text-[10px] opacity-50 !important;
+    @apply absolute top-[16vh] h-[40px] w-[40px] rounded-full bg-zinc-400 text-sm text-[10px] opacity-50 !important;
+  }
+
+  #cast.swiper .swiper-button-prev,
+  .swiper-button-next {
+    @apply absolute top-[16vh] h-[40px] w-[40px] rounded-full bg-zinc-400 text-sm text-[10px] opacity-50 !important;
   }
 
   .swiper .swiper-pagination-bullet-active {

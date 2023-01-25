@@ -8,10 +8,8 @@ import {
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper";
 import "swiper/css";
-import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { BASE_IMAGE_URL } from "../apis/tmdb";
-import moment from "moment/moment";
 
 const Home = () => {
   const {
@@ -44,7 +42,7 @@ const Home = () => {
           <Swiper
             id="main"
             modules={[Autoplay, Pagination]}
-            spaceBetween={30}
+            spaceBetween={60}
             slidesPerView={2}
             centeredSlides={true}
             grabCursor={true}
@@ -57,10 +55,10 @@ const Home = () => {
           >
             {dataTrendingMovie.results.slice(0, 10).map((movie, idx) => (
               <SwiperSlide key={idx}>
-                <div className="h-full w-full">
+                <div className="h-full w-[45vw]">
                   <img
                     className="block h-full w-full rounded-xl object-cover opacity-25"
-                    src={`${BASE_IMAGE_URL}${movie.poster_path}`}
+                    src={`${BASE_IMAGE_URL}${movie.backdrop_path}`}
                     alt={movie.title}
                   />
                 </div>

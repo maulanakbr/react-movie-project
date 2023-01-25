@@ -1,7 +1,7 @@
 import { useGetSearchMovieQuery } from "../services/movieApi";
 import { SMALL_IMAGE_URL } from "../apis/tmdb";
 import moment from "moment/moment";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const Search = () => {
   const { query } = useParams();
@@ -21,13 +21,13 @@ const Search = () => {
   };
 
   return (
-    <div className="m-8">
+    <div className="mx-8 mt-4 mb-8">
       {isFetchingSearchMovie ? (
         <div>Fetching..</div>
       ) : errorSearchMovie ? (
         <div>Error..</div>
       ) : (
-        <div className="m-8 flex">
+        <div className="mx-8 flex">
           <div className="flex w-full rounded-2xl">
             <div className="mr-4 h-[60vh] w-[30%] rounded-2xl">
               <h5 className="w-full rounded-t-2xl bg-red-500 p-4 text-[18px] font-semibold">
@@ -42,18 +42,27 @@ const Search = () => {
             </div>
             <div className="flex w-full flex-col rounded-xl">
               {dataSearchMovie.results.slice(0, 10).map((movie, idx) => (
-                <div key={idx} className="mb-3 flex w-full rounded-xl border">
-                  <div className="m-2">
-                    <div className="flex h-[18vh] w-[7vw]">
-                      <img
-                        className="block h-full w-full rounded-xl object-fill"
-                        src={`${SMALL_IMAGE_URL}${movie.poster_path}`}
-                        alt={movie.title}
-                      />
+                <div
+                  key={idx}
+                  className="mb-3 flex w-full overflow-hidden rounded-xl border border-zinc-800 shadow-lg"
+                >
+                  <div>
+                    <div className="flex h-full w-[7vw]">
+                      <Link to={`/movie/${movie.id}`}>
+                        <img
+                          className="block h-full w-full cursor-pointer object-fill"
+                          src={`${SMALL_IMAGE_URL}${movie.poster_path}`}
+                          alt={movie.title}
+                        />
+                      </Link>
                     </div>
                   </div>
                   <div className="m-2 w-full">
-                    <p className="pt-2 font-bold">{movie.title}</p>
+                    <Link to={`/movie/${movie.id}`}>
+                      <p className="cursor-pointer pt-2 font-bold">
+                        {movie.title}
+                      </p>
+                    </Link>
                     <p className="pb-2 font-medium text-zinc-500">
                       {date(movie.release_date)}
                     </p>
