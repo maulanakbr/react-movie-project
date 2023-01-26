@@ -41,18 +41,17 @@
     @apply h-[70vh];
   }
 
-  #cast.swiper {
-    @apply h-[37vh];
+  #credits.swiper {
+    @apply h-[37vh] w-[60vw];
   }
 
-  #movieList.swiper .swiper-button-prev,
+  .swiper .swiper-button-prev,
   .swiper-button-next {
     @apply absolute top-[16vh] h-[40px] w-[40px] rounded-full bg-zinc-400 text-sm text-[10px] opacity-50 !important;
   }
 
-  #cast.swiper .swiper-button-prev,
-  .swiper-button-next {
-    @apply absolute top-[16vh] h-[40px] w-[40px] rounded-full bg-zinc-400 text-sm text-[10px] opacity-50 !important;
+  .swiper .swiper-pagination-bullet {
+    @apply cursor-pointer bg-zinc-500;
   }
 
   .swiper .swiper-pagination-bullet-active {

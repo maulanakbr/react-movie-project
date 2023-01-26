@@ -24,6 +24,12 @@ export const movieApi = createApi({
     getMovieCredits: builder.query({
       query: (id) => `/movie/${id}/credits?api_key=${API_KEY}`,
     }),
+    getExternalIds: builder.query({
+      query: (id) => `/movie/${id}/external_ids?api_key=${API_KEY}`,
+    }),
+    getKeywords: builder.query({
+      query: (id) => `/movie/${id}/keywords?api_key=${API_KEY}`,
+    }),
     getKoreanMovie: builder.query({
       query: () =>
         `/discover/movie?api_key=${API_KEY}&with_original_language=ko&sort_by=popularity.desc&page=1`,
@@ -62,6 +68,8 @@ export const {
   useGetSearchMovieQuery,
   useGetMovieDetailsQuery,
   useGetMovieCreditsQuery,
+  useGetExternalIdsQuery,
+  useGetKeywordsQuery,
   useGetKoreanMovieQuery,
   useGetJapaneseMovieQuery,
   useGetFiftiesMovieQuery,
