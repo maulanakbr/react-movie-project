@@ -2,6 +2,7 @@ import { useGetSearchMovieQuery } from "../services/movieApi";
 import { SMALL_IMAGE_URL } from "../apis/tmdb";
 import moment from "moment/moment";
 import { Link, useParams } from "react-router-dom";
+import { PhotoIcon } from "@heroicons/react/24/outline";
 
 const Search = () => {
   const { query } = useParams();
@@ -46,14 +47,20 @@ const Search = () => {
                   key={idx}
                   className="mb-3 flex w-full overflow-hidden rounded-xl border border-zinc-800 shadow-lg"
                 >
-                  <div>
+                  <div className="relative">
                     <div className="flex h-full w-[7vw]">
                       <Link to={`/movie/${movie.id}`}>
-                        <img
-                          className="block h-full w-full cursor-pointer object-fill"
-                          src={`${SMALL_IMAGE_URL}${movie.poster_path}`}
-                          alt={movie.title}
-                        />
+                        {movie.poster_path ? (
+                          <img
+                            className="block h-full w-full cursor-pointer object-fill"
+                            src={`${SMALL_IMAGE_URL}${movie.poster_path}`}
+                            alt={movie.title}
+                          />
+                        ) : (
+                          <div>
+                            <PhotoIcon className="absolute top-10 right-[1.5vw] block h-[7vh] object-cover" />
+                          </div>
+                        )}
                       </Link>
                     </div>
                   </div>

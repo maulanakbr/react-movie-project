@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  const navMenu = ["Lorem", "Lorem", "Lorem", "Lorem"];
+  const navMenu = ["Home", "Movies", "TV Series"];
 
   return (
     <div className="mx-16 my-2 flex h-[10vh] items-center justify-between text-lg">
       <Link to="/">
         <span className="cursor-pointer text-3xl font-bold text-red-500">
-          Lorem
+          M A Y
         </span>
       </Link>
       <ul className="flex items-center gap-6">

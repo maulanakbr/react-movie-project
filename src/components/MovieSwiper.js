@@ -5,7 +5,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { Link } from "react-router-dom";
 
-const ImageSwiper = ({ data, title }) => {
+const MovieSwiper = ({ data, title }) => {
   return (
     <div className="my-8">
       <h5 className="mb-3 text-[18px] font-semibold">{title}</h5>
@@ -16,8 +16,8 @@ const ImageSwiper = ({ data, title }) => {
         slidesPerView={7}
         navigation
       >
-        {data?.results.slice(0, 10).map((movie, idx) => (
-          <SwiperSlide key={idx}>
+        {data?.results.slice(0, 10).map((movie) => (
+          <SwiperSlide key={movie.id}>
             <div className="overflow-hidden rounded-xl shadow-lg">
               <Link to={`/movie/${movie.id}`}>
                 <img
@@ -34,4 +34,4 @@ const ImageSwiper = ({ data, title }) => {
   );
 };
 
-export default ImageSwiper;
+export default MovieSwiper;

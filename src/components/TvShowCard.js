@@ -2,7 +2,7 @@ import { BASE_IMAGE_URL, SMALL_IMAGE_URL } from "../apis/tmdb";
 import { ClockIcon } from "@heroicons/react/24/outline";
 import moment from "moment/moment";
 
-const MovieCard = ({ details, credits }) => {
+const TvShowCard = ({ details, credits }) => {
   const runtime = (number) => {
     const duration = moment.duration(number, "minutes");
     const format = `${duration._data.hours}h ${duration._data.minutes}m`;
@@ -13,8 +13,6 @@ const MovieCard = ({ details, credits }) => {
   const yearSlice = (string) => {
     return string.slice(0, 4);
   };
-
-  const findDirector = credits?.crew.filter((crew) => crew.job === "Director");
 
   return (
     <div className="h-full">
@@ -37,9 +35,9 @@ const MovieCard = ({ details, credits }) => {
             </div>
             <div className="h-[15rem] w-[40rem] flex-col p-4">
               <h4 className="mb-2 py-1 font-bold">
-                {details.title}
+                {details.name}
                 <span className="px-2 font-normal text-zinc-500">{`(${yearSlice(
-                  details.release_date
+                  details.first_air_date || details.last_air_date
                 )})`}</span>
               </h4>
               <div className="mb-2 flex">
@@ -59,8 +57,8 @@ const MovieCard = ({ details, credits }) => {
               <h5 className="mb-1 font-medium">Overview</h5>
               <p className="mb-3">{details.overview}</p>
               <div>
-                <p className="font-medium">{findDirector[0]?.name}</p>
-                <p>{findDirector[0]?.job}</p>
+                <p className="font-medium">{details.created_by[0]?.name}</p>
+                <p>Creator</p>
               </div>
             </div>
           </div>
@@ -70,4 +68,4 @@ const MovieCard = ({ details, credits }) => {
   );
 };
 
-export default MovieCard;
+export default TvShowCard;

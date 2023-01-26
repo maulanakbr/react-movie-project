@@ -5,7 +5,7 @@ import { Navigation } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 
-const CreditsSwiper = ({ data, title }) => {
+const CastCrewSwiper = ({ data, title }) => {
   return (
     <div className="my-8">
       <h5 className="mb-3 text-[18px] font-semibold">{title}</h5>
@@ -28,7 +28,7 @@ const CreditsSwiper = ({ data, title }) => {
                   />
                 ) : (
                   <div>
-                    <PhotoIcon className="absolute top-14 right-11 block h-[10vh] object-cover" />
+                    <PhotoIcon className="absolute top-14 right-10 block h-[10vh] object-cover" />
                   </div>
                 )}
               </div>
@@ -48,4 +48,4 @@ const CreditsSwiper = ({ data, title }) => {
   );
 };
 
-export default CreditsSwiper;
+export default CastCrewSwiper;

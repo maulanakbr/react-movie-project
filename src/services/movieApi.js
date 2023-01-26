@@ -11,8 +11,14 @@ export const movieApi = createApi({
     getPopularMovie: builder.query({
       query: () => `/movie/popular?api_key=${API_KEY}&page=1`,
     }),
+    getPopularTvShow: builder.query({
+      query: () => `/tv/popular?api_key=${API_KEY}&page=1`,
+    }),
     getTopRatedMovie: builder.query({
       query: () => `/movie/top_rated?api_key=${API_KEY}&page=1`,
+    }),
+    getTopRatedTvShow: builder.query({
+      query: () => `/tv/top_rated?api_key=${API_KEY}&page=1`,
     }),
     getSearchMovie: builder.query({
       query: (query) =>
@@ -21,14 +27,23 @@ export const movieApi = createApi({
     getMovieDetails: builder.query({
       query: (id) => `/movie/${id}?api_key=${API_KEY}`,
     }),
+    getTvShowDetails: builder.query({
+      query: (id) => `/tv/${id}?api_key=${API_KEY}`,
+    }),
     getMovieCredits: builder.query({
       query: (id) => `/movie/${id}/credits?api_key=${API_KEY}`,
+    }),
+    getTvShowCredits: builder.query({
+      query: (id) => `/tv/${id}/credits?api_key=${API_KEY}`,
     }),
     getExternalIds: builder.query({
       query: (id) => `/movie/${id}/external_ids?api_key=${API_KEY}`,
     }),
-    getKeywords: builder.query({
+    getMovieKeywords: builder.query({
       query: (id) => `/movie/${id}/keywords?api_key=${API_KEY}`,
+    }),
+    getTvShowKeywords: builder.query({
+      query: (id) => `/tv/${id}/keywords?api_key=${API_KEY}`,
     }),
     getKoreanMovie: builder.query({
       query: () =>
@@ -64,12 +79,17 @@ export const movieApi = createApi({
 export const {
   useGetTrendingMovieQuery,
   useGetPopularMovieQuery,
+  useGetPopularTvShowQuery,
   useGetTopRatedMovieQuery,
+  useGetTopRatedTvShowQuery,
   useGetSearchMovieQuery,
   useGetMovieDetailsQuery,
+  useGetTvShowDetailsQuery,
   useGetMovieCreditsQuery,
+  useGetTvShowCreditsQuery,
   useGetExternalIdsQuery,
-  useGetKeywordsQuery,
+  useGetMovieKeywordsQuery,
+  useGetTvShowKeywordsQuery,
   useGetKoreanMovieQuery,
   useGetJapaneseMovieQuery,
   useGetFiftiesMovieQuery,
