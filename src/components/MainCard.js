@@ -18,11 +18,11 @@ const MainCard = () => {
   };
 
   const handleSearchClick = () => {
-    if (searchItem) return navigate(`/search/${searchItem}`);
+    if (searchItem) return navigate(`/search/${searchItem}/1`);
   };
 
   const handleSearchKeyDown = (e) => {
-    if (e.key === "Enter") return navigate(`/search/${searchItem}`);
+    if (e.key === "Enter") return navigate(`/search/${searchItem}/1`);
   };
 
   return (

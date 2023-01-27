@@ -31,9 +31,6 @@ const TvShowDetails = () => {
 
   let languageNames = new Intl.DisplayNames(["en"], { type: "language" });
 
-  // console.log(dataTvShowCredits);
-  console.log(dataTvShowDetails);
-
   return (
     <div className="mx-16 my-4">
       {isFetchingTvShowDetails ||
