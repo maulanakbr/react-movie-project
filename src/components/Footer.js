@@ -4,7 +4,7 @@ const Footer = () => {
   const footerMenu = ["Home", "Movies", "TV Series"];
 
   return (
-    <div className="mt-8 flex h-[40vh] items-center justify-center border-t border-zinc-800 text-lg">
+    <div className="flex h-[40vh] items-center justify-center border-t border-zinc-800 text-lg">
       <div>
         <Link to="/">
           <span className="block cursor-pointer text-center text-3xl font-bold text-red-500">

@@ -23,7 +23,9 @@ const MovieCard = ({ details, credits }) => {
           <div className="h-full">
             <img
               className="block h-full w-full object-cover opacity-25 mix-blend-lighten"
-              src={`${BASE_IMAGE_URL}${details?.backdrop_path}`}
+              src={`${BASE_IMAGE_URL}${
+                details?.backdrop_path || details?.poster_path
+              }`}
               alt="backdrop_image"
             />
           </div>

@@ -90,7 +90,7 @@ const TvShowDetails = () => {
                 <h5 className="mb-3 text-[18px] font-semibold">Network</h5>
                 <img
                   className="block h-[30px] w-[65px] text-zinc-300"
-                  src={`${SMALL_IMAGE_URL}${dataTvShowDetails.networks[0].logo_path}`}
+                  src={`${SMALL_IMAGE_URL}${dataTvShowDetails?.networks[0].logo_path}`}
                   alt={dataTvShowDetails.networks[0].path}
                 />
               </div>
