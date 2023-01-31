@@ -9,10 +9,10 @@ export const movieApi = createApi({
       query: () => `/trending/all/day?api_key=${API_KEY}`,
     }),
     getPopularMovie: builder.query({
-      query: () => `/movie/popular?api_key=${API_KEY}&page=1`,
+      query: (page) => `/movie/popular?api_key=${API_KEY}&page=${page}`,
     }),
     getPopularTvShow: builder.query({
-      query: () => `/tv/popular?api_key=${API_KEY}&page=1`,
+      query: (page) => `/tv/popular?api_key=${API_KEY}&page=${page}`,
     }),
     getTopRatedMovie: builder.query({
       query: () => `/movie/top_rated?api_key=${API_KEY}&page=1`,

@@ -15,12 +15,12 @@ const Navbar = () => {
     {
       id: 3,
       text: "Movies",
-      link: "/movies",
+      link: "/movie/popular",
     },
     {
       id: 4,
       text: "TV Shows",
-      link: "/series",
+      link: "/tv/popular",
     },
   ];
 
@@ -33,8 +33,18 @@ const Navbar = () => {
       </Link>
       <ul className="flex items-center gap-6">
         {navMenu.slice(1, 4).map((menu) => (
-          <Link to={menu.link} key={menu.id}>
-            <li className="cursor-pointer font-medium">{menu.text}</li>
+          <Link
+            to={menu.text !== "Home" ? `${menu.link}/1` : menu.link}
+            // to={menu.link}
+            key={menu.id}
+          >
+            <li
+              className="cursor-pointer font-medium"
+              // onClick={() => navigate(menu.link)}
+              // key={menu.id}
+            >
+              {menu.text}
+            </li>
           </Link>
         ))}
       </ul>
