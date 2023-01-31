@@ -26,9 +26,9 @@ const TvShowList = () => {
       <ItemGrid
         fetch={isFetchingPopularTvShow}
         error={errorPopularTvShow}
-        data={dataPopularTvShow?.results}
-        currentPage={page}
-        category="tv"
+        data={dataPopularTvShow}
+        currentPage={Number(page)}
+        category="tvShows"
         handleNext={handleNextButtonClick}
         handlePrev={handlePrevButtonClick}
       />

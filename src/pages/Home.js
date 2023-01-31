@@ -41,6 +41,8 @@ const Home = () => {
     error: errorTopRatedTvShow,
   } = useGetTopRatedTvShowQuery();
 
+  window.scroll(0, 0);
+
   return (
     <div className="mx-8">
       <MainCard />

@@ -26,8 +26,8 @@ const MovieList = () => {
       <ItemGrid
         fetch={isFetchingPopularMovie}
         error={errorPopularMovie}
-        data={dataPopularMovie?.results}
-        currentPage={page}
+        data={dataPopularMovie}
+        currentPage={Number(page)}
         category="movie"
         handleNext={handleNextButtonClick}
         handlePrev={handlePrevButtonClick}

@@ -35,16 +35,9 @@ const Navbar = () => {
         {navMenu.slice(1, 4).map((menu) => (
           <Link
             to={menu.text !== "Home" ? `${menu.link}/1` : menu.link}
-            // to={menu.link}
             key={menu.id}
           >
-            <li
-              className="cursor-pointer font-medium"
-              // onClick={() => navigate(menu.link)}
-              // key={menu.id}
-            >
-              {menu.text}
-            </li>
+            <li className="cursor-pointer font-medium">{menu.text}</li>
           </Link>
         ))}
       </ul>
